@@ -1,11 +1,12 @@
 <?php
+include('db.php');
 $usuario=$_POST['usuario'];
 $contraseña=$_POST['contraseña'];
 session_start();
 $_SESSION["usuario"]=$usuario;
+
 $conexion=mysqli_connect("localhost","root","","login");
 
-//include("db,php");
 
 $consulta="SELECT*FROM usuario where usuario= '$usuario'and contraseña = '$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);
@@ -16,7 +17,7 @@ if($filas){
 }else{
  ?>
  <?php
- include("index.php");
+ include("index.html");
  ?>
  <h1 class="bad">ERROR EN LA AUNTENTIFICACION</h1>
  <?php
