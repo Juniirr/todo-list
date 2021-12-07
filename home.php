@@ -4,28 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de tareas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&display=swap" rel="stylesheet">
-    <script src="script.js" type="text/javascript" defer></script>
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="list roundBorder">
-        <div class="date">
-            <div class="dateRight">
-                <div id="dateNumber"></div>
-                <div>
-                    <div id="dateMonth"></div>
-                    <div id="dateYear"></div>
-                </div>
-            </div>
-            <div id="dateText"></div>
+<body>    
+    <div class="contenedor">
+        
+        <div class="cabecera">
+            <h2>Lista de Tareas</h2>
         </div>
-        <form onsubmit="addNewTask(event)" >
-            <input type="text" name="taskText" autocomplete="off" placeholder="Nueva tarea" class="roundBorder">
-            <button type="submit" class="addTaskButton">+</button>
-            <button type="button" class="orderButton roundBorder" onclick="renderOrderedTasks()">Ordenar</button>
+        <form id="form-crear" class="formulario">
+            <div class="form-control">
+            <input type="text" id="crear" class="form-control" placeholder="Nombre de la Tarea">
+            <button><i class="fas fa-plus"></i></button>
+            
+            
+            </div>
         </form>
-        <div id="tasksContainer"></div>
     </div>
+    <section>
+        
+        <form action="">
+            <input type="text" id="buscar" placeholder="Buscar...">
+        </form>
+        <ul id="lista-tareas" class="list-group">
+                        
+        </ul>
+    </section>
+<script src="app.js"></script>
+<input type="button" value="Cancelar" onClick="history.go(-1);">
+
 </body>
 </html>
