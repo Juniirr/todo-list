@@ -7,33 +7,69 @@
     <title>Lista de Tareas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <linkn rel="stylesheet" href="style1.css">
+    <script>"https://code.jquery.com/jquery-3.3.1.slim.min.js"</script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></script>
 </head>
 <body>    
-    <div class="contenedor">
-        
-        <div class="cabecera">
-            <h2>Lista de Tareas</h2>
-        </div>
-        <form id="form-crear" class="formulario">
-            <div class="form-control">
-            <input type="text" id="crear" class="form-control" placeholder="Nombre de la Tarea">
-            <button><i class="fas fa-plus"></i></button>
-            
-            
-            </div>
-        </form>
+<body background=">
+    
+    <?php require_once 'process.php'; ?>
+
+    <?php
+
+    if (isset($_SESSION['message'])): ?>
+
+    <div class="alert alert-<?=$_SESSION['msg_type']?>">
+
+        <?php
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+        ?>
     </div>
-    <section>
-        
-        <form action="">
-            <input type="text" id="buscar" placeholder="Buscar...">
-        </form>
-        <ul id="lista-tareas" class="list-group">
-                        
-        </ul>
-    </section>
-<script src="app.js"></script>
-<input type="button" value="Cancelar" onClick="history.go(-1);">
+    <?php endif ?>
+    <div class="container">
+    <?php
+        $mysqli = new mysqli('localhost', 'root', '', 'crud') or die(mysqli_error($mysqli));
+        $result = $mysqli->query("SELECT * FROM data") or die($mysqli->error);
+        //pre_r($result);
+        ?>
+        <div class="row justify-content-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tarea</th>
+                        <th>Año</th>
+                        <th colspan="2">Acciones</th>
+                    </tr>
+                </thead>
+        <?php
+            while ($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo $row['name']; ?></td>
+                    <td><?php echo $row['location']; ?></td>
+                    <td><?php echo $row['anio']; ?></td>
+                    <td>
+                        <a href="indexT.php?edit=<?php echo $row['id']; ?>"
+                            class="btn btn-info">Editar</a>
+                        <a href="process.php?delete=<?php echo $row['id']; ?>"
+                            class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            <?php endwhile; ?>   
+            </table>
+        </div>
+        <?php
+
+        function pre_r( $array ) {
+            echo '<pre>';
+            print_r($array);
+            echo '</pre';
+        }
+    ?>
+
 
 </body>
 </html>
