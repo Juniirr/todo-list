@@ -8,12 +8,13 @@
 }
 
 body {
+
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(-45deg, #5fba6e, #8fe696, #5fba6e);
+    background: url('fonfo.jpg');
     overflow: hidden;
 }
 

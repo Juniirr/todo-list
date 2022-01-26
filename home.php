@@ -12,8 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></script>
 </head>
-<body>    
-<body background=">
+<body background="fonfo.jpg">    
     
     <?php require_once 'process.php'; ?>
 
@@ -68,7 +67,33 @@
             print_r($array);
             echo '</pre';
         }
-    ?>
+        ?>
+        <div class="row justify-content-center">
+        <form action="process.php" method="POST">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+            <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Ingresa tu nombre" required>
+            </div>
+            <div class="form-group">
+            <label>Tarea</label>
+            <input type="text" name="location" class="form-control" value="<?php echo $location; ?>" placeholder="Ingrese su tarea" required>
+            </div>
+            <div class="form-group">
+            <label>Año</label>
+            <input type="text" name="anio" class="form-control" value="<?php echo $anio; ?>" placeholder="Ingresa el año" required>
+            </div>
+            <div class="form-group">
+            <?php
+            if ($update == true):
+            ?>
+            <button type="submit" class="btn btn-info" name="update">Actualizar</button>
+            <?php else: ?>   
+            <button type="submit" class="btn btn-primary" name="save">Crear</button>
+            <?php endif; ?>
+            </div>
+      
+        
 
 
 </body>
