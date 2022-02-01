@@ -27,8 +27,7 @@ document.getElementById('btnloging').addEventListener('click', function () {
                 $('#lblmensaje').hide();
                 $('#lblregistro').show();
             }else{
-                window.open('http://localhost/login_secion/view/home.php/','_self');
-            }
+                window.open('http://localhost/login_secion/view/home.php','_self');            }
         });
     }).catch(function (error) {
         console.log(error);
@@ -50,8 +49,7 @@ document.getElementById('btnloginf').addEventListener('click', function () {
                 $('#lblmensaje').hide();
                 $('#lblregistro').show();
             }else{
-                window.open('http://localhost/login_secion/view/home.php/','_self');
-            }
+                window.open('http://localhost/login_secion/view/home.php','_self');            }
         });
     }).catch(function (error) {
         console.log(error);
@@ -73,8 +71,7 @@ document.getElementById('btnloginh').addEventListener('click', function () {
                 $('#lblmensaje').hide();
                 $('#lblregistro').show();
             }else{
-                window.open('http://localhost/login_secion/view/home.php/','_self');
-            }
+                window.open('http://localhost/login_secion/view/home.php','_self');            }
         });
     }).catch(function (error) {
         console.log(error);
@@ -105,8 +102,7 @@ $(document).on("click", "#btnlogin", function () {
                 $('#lblerror').show();
                 $('#lblmensaje').hide();
             }else{
-                window.open('http://localhost/login_secion/view/home.php/','_self');
-            }
+                window.open('http://localhost/login_secion/view/home.php','_self');            }
         });
     }
 });

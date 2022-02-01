@@ -18,7 +18,7 @@ class Conectar{
     }
 
     public function ruta(){
-        return "http://localhost/login-secion/";
+        return "http://localhost/php_lista/";
     }
 }
 ?>
