@@ -20,7 +20,7 @@ if (isset($_POST['save'])){
     $_SESSION['message'] = "El registro se ha guardado!";
     $_SESSION['msg_type'] = "success";
 
-    header('location: indexT.php');
+    header('location: home.php');
 }
 
 if (isset($_GET['delete'])){
@@ -30,7 +30,7 @@ if (isset($_GET['delete'])){
     $_SESSION['message'] = "El registro ha sido eliminado!";
     $_SESSION['msg_type'] = "danger";
 
-    header('location: indexT.php');
+    header('location: home.php');
 }
 
 if (isset($_GET['edit'])){
@@ -55,5 +55,5 @@ if (isset($_POST['update'])){
     $_SESSION['message'] = "Se actualizó el registro!";
     $_SESSION['msg_type'] = "warning";
 
-    header('location: indexT.php');
+    header('location: home.php');
 }

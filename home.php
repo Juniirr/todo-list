@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></script>
 </head>
-<body background="fondo2.jpg">
+<body background="fondo.jpg">
     
     <?php require_once 'process.php'; ?>
 
@@ -38,9 +38,9 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Nombre</th>
                         <th>Tarea</th>
-                        <th>Año</th>
+                        <th>Descripcion</th>
+                        <th>Fecha</th>
                         <th colspan="2">Acciones</th>
                     </tr>
                 </thead>
@@ -51,7 +51,7 @@
                     <td><?php echo $row['location']; ?></td>
                     <td><?php echo $row['anio']; ?></td>
                     <td>
-                        <a href="indexT.php?edit=<?php echo $row['id']; ?>"
+                        <a href="home.php?edit=<?php echo $row['id']; ?>"
                             class="btn btn-info">Editar</a>
                         <a href="process.php?delete=<?php echo $row['id']; ?>"
                             class="btn btn-danger">Eliminar</a>
@@ -72,16 +72,16 @@
         <form action="process.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="form-group">
-            <label>Nombre</label>
-            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Ingresa tu nombre" required>
-            </div>
-            <div class="form-group">
             <label>Tarea</label>
-            <input type="text" name="location" class="form-control" value="<?php echo $location; ?>" placeholder="Ingrese su tarea" required>
+            <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Ingresa su tarea" required>
             </div>
             <div class="form-group">
-            <label>Año</label>
-            <input type="text" name="anio" class="form-control" value="<?php echo $anio; ?>" placeholder="Ingresa el año" required>
+            <label>Descripcion</label>
+            <input type="text" name="location" class="form-control" value="<?php echo $location; ?>" placeholder="Ingrese la descripcion" required>
+            </div>
+            <div class="form-group">
+            <label>Fecha</label>
+            <input type="text" name="anio" class="form-control" value="<?php echo $anio; ?>" placeholder="Ingresa la fecha" required>
             </div>
             <div class="form-group">
             <?php

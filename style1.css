@@ -14,15 +14,15 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background: url('fonfo.jpg');
     overflow: hidden;
+    background: url(fondo.jpg);
 }
 
 .wrap {
     position: relative;
     width: 70%;
     height: 80vh;
-    background-color: #fff;
+    background-color: white;
     border-radius: 30px;
 }
 
