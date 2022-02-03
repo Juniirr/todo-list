@@ -5,7 +5,7 @@ class Conectar{
 
     protected function conexion(){
         try{
-            $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=andercode_loginsocialmedia","root","");
+            $conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=bd_login","root","");
             return $conectar;
         } catch (Exception $e){
             print "¡Error BD!: " . $e->getMessage() . "<br/>";
