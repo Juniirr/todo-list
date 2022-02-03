@@ -29,7 +29,7 @@ document.getElementById('btnloging').addEventListener('click', function () {
                     confirmButtonText: `Ok`,
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.open('http://localhost/login_secion/view/home.php','_self');                    }
+                        window.open('http://localhost/php_lista/view/home.php','_self');                    }
                 });
             }else{
                 Swal.fire(
@@ -63,7 +63,7 @@ document.getElementById('btnloginf').addEventListener('click', function () {
                     confirmButtonText: `Ok`,
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.open('http://localhost/login_secion/view/home.php','_self');
+                        window.open('http://localhost/php_lista/view/home.php','_self');
                     }
                 });
             }else{
@@ -98,7 +98,7 @@ document.getElementById('btnloginh').addEventListener('click', function () {
                     confirmButtonText: `Ok`,
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        window.open('http://localhost/login_secion/view/home.php','_self');
+                        window.open('http://localhost/php_lista/view/home.php','_self');
                     }
                 });
             }else{
@@ -146,7 +146,7 @@ $(document).on("click", "#btnregistrar", function () {
                         confirmButtonText: `Ok`,
                     }).then((result) => {
                         if (result.isConfirmed) {
-                            window.open('http://localhost/login_secion/view/home.php','_self');
+                            window.open('http://localhost/php_lista/view/home.php','_self');
                         }
                     });
                 }else{
